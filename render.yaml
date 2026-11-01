@@ -1,0 +1,31 @@
+# Render deployment configuration (Blueprint).
+# Database: PostgreSQL on Neon; DATABASE_URL and the admin credentials are set in the Render dashboard.
+services:
+  - type: web
+    name: zai-project
+    runtime: node
+    plan: free
+    region: frankfurt
+    branch: main
+    buildCommand: cd backend && npm ci
+    startCommand: cd backend && npm run start:prod
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NODE_ENV
+        value: production
+      - key: TRUST_PROXY
+        value: "true"
+      - key: FORCE_HTTPS
+        value: "true"
+      - key: DATABASE_SSL
+        value: "true"
+      - key: TOKEN_TTL_SECONDS
+        value: "3600"
+      - key: DATABASE_URL
+        sync: false
+      - key: ADMIN_USERNAME
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false

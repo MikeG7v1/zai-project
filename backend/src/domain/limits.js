@@ -1,0 +1,16 @@
+export const MIN_PASSWORD_LENGTH = 8;
+export const MAX_PASSWORD_LENGTH = 200;
+export const MAX_USERNAME_LENGTH = 50;
+
+export const MAX_SERIES_NAME_LENGTH = 100;
+export const MAX_SERIES_ICON_LENGTH = 50;
+export const MAX_SERIES_UNIT_LENGTH = 20;
+
+export const MAX_SENSOR_NAME_LENGTH = 100;
+
+export const MAX_MEASUREMENT_TIME_AHEAD_MS = 5 * 60 * 1000;
+export const DEFAULT_MEASUREMENTS_LIMIT = 1000;
+export const MAX_MEASUREMENTS_LIMIT = 10000;
+
+export const MAX_INTEGER_ID = 2147483647;
+export const MAX_BIGINT_ID = Number.MAX_SAFE_INTEGER;
